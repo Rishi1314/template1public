@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}    
+
 /* navbar */
 nav{
     display: flex;
@@ -5,6 +9,20 @@ nav{
     justify-content: space-between;
     padding: 0% 5%;
     align-items: center;
+}
+.logo{
+    font-family: 'Lobster', cursive; color:#71c9ce;
+    transition: 0.5s;
+    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+}
+.logo:hover{
+    font-family: 'Lobster', cursive; color:rgb(252, 252, 252);
+    transform: translate(20px);
+    transition: 0.5s;
+    text-shadow: #71c9ce 0px 0px 3px,   #71c9ce 0px 0px 3px,   #71c9ce 0px 0px 3px,
+             #71c9ce 0px 0px 3px,   #71c9ce 0px 0px 3px,   #71c9ce 0px 0px 3px;
+    
 }
 .dropdown-menu{
     background-color:#71c9ce;
@@ -89,9 +107,15 @@ nav{
     color: #0091FF;
     font-size: 200%;
     padding: 5% 5%;
+    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+
 
 }
 @media (max-width:450px){
+    .skillsection{
+        background-color:#cdfffc ;
+    }
     .aboutmetextword{
         font-family: 'Montserrat', sans-serif;
         font-size: 200%;
@@ -134,13 +158,13 @@ nav{
         margin: 2%;
         padding-right: 20%;
     }
-
+         
 }
 
 .aboutmeimage{
     margin: 5%;
     align-items: center;
-    box-shadow: -20px 20px 30px rgba(0, 0,0, 0.9); margin: 5%;
+    box-shadow: -20px 20px 30px rgba(0, 0,0, 0.5); margin: 5%;
     transform: scale(0.8,0.8);
                
     transition: 0.5s;
@@ -157,6 +181,83 @@ nav{
     transition: 0.5s;
     transform: translate(10%,-10%);
     opacity: 1;
+}
+
+/*Skills*/
+@media (max-width:1300px){
+    .skillsection{
+        background-color:#cdfffc ;
+        width: 120%;
+        height:140em ;
+    }
+    
+    .card-container{
+        margin-bottom: 5%;
+        width: 200px;
+        height: 300px;
+        }
+}
+.skillicons{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.skills{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+    justify-items: center;
+    align-items: center;
+
+}
+
+.skillsection{
+    background-color:#cdfffc ;
+}
+
+.card-container{
+    margin: 5%;
+    width: 200px;
+    height: 300px;
+    
+}
+.card .front{
+    
+    justify-items: center;
+    box-shadow: -20px 20px 30px rgba(0, 0,0, 0.5); margin: 5%;
+    backface-visibility: hidden;
+    
+}
+.card .back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    box-shadow: -20px 20px 30px rgba(0, 0,0, 0.5); margin: 5%;
+    backface-visibility: hidden;
+    
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-out;
+    transform-style: preserve-3d;
+    border: 0px;
+    background:#cdfffc;
+}
+.card-container:hover .card{
+    transform: rotateY(180deg);
+}
+.card figure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.skilltext{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 200%;
 }
 
 /*---------main page rotating text plugin---------*/
@@ -203,7 +304,7 @@ b{
         width: 40%;
         height: 20%;
         background: rgba(0, 0,0, 0);
-        transform: rotate(10deg)
+        transform: rotate(-10deg)
                    skew(25deg)
                    scale(0.8);
         transition: 0.5s;
